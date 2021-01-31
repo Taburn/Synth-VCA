@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Yusynth VCA faceplate.PcbDoc]
+   Generated File[Yusynth VCA faceplate.TXT]
+   Generated File[Yusynth VCA faceplate.LDP]
+   Generated File[Yusynth VCA faceplate.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 5:08:30 PM On 28/03/2020

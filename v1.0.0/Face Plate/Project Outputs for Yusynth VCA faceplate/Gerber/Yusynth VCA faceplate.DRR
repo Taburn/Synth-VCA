@@ -1,0 +1,18 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Yusynth VCA faceplate.PcbDoc   28/03/2020  5:08:30 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Yusynth VCA faceplate.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      3mm (118mil)                                              Round             5         PTH        76.11mm (3.00inch)
+T2      3.5mm (138mil)                                            Round             2         PTH        122.50mm (4.82inch)
+T3      5.9mm (232mil)                                            Round             1         PTH        0.00mm (0.00inch)
+T4      6.2mm (244mil)                                            Round             6         PTH        78.74mm (3.10inch)
+T5      7.7mm (303mil)                                            Round             3         PTH        55.94mm (2.20inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              17
+
+Total Processing Time (hh:mm:ss) : 00:00:00
