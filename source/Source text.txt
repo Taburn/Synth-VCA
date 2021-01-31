@@ -1,0 +1,75 @@
+source: http://www.yusynth.net/Modular/EN/VCA/index.html
+
+***Project Description***
+This very simple VCA is based on the one I used in my US1 modular. It has proven to be very efficient. At first glance it looks like a classical cascode circuit, but the current sink (Q3) is not mounted in series with the emitters of the differential pair Q1-Q2. 
+The current draw of this module is quite low : 5mA from the +15V rail and 4mA from the -15V rail.
+
+
+
+***Schematic Description***
+The schematic is rather simple. 
+U1a (1/2 TL072) sums up and inverts the two inputs.  Q1 and Q2 are connected as a differential stage, it is a good practice to have these two trannies matched or to use a dual transistor such as a 2SC1583. 
+U1b (1/2 TL072) is used as a differential unit gain "amplifier". Voltage control of the circuit is based around U2 and Q3. U2 inverts the positive voltage control, this may seem weird but is justified by the way Q3 is connected. The collector of Q3 is grounded and its emitter is connected to -15V through R19, therefore the base of Q3 must be driven by a negative bias. Q3 is current generator that forces the current through R17 which acts as a current sink for Q1 & Q2.
+Two versions of this circuit can be built:
+
+ - an AC version, in such a case C3 & C4 are required, P1, P2 and P3 must be log pots;
+ - a DC version, C3 & C4 must be omitted (use straps), P1, P2 and P3 must be lin pots
+
+
+***Components and building details***
+reference	value		quantity
+U1		TL072		1
+U2		LM741/TL071	1
+U3*		2SC1583		1*
+Q1*,Q2*,Q3,Q4**	BC547C		4*
+D1**		1N4148		1**
+R1,R2		10		2
+R14,R25		470 5%		2
+R7		1k 5%		1
+R10,R11		10k 1%		2
+R24		12k 1%		1
+R8,R9		15k 1% 		2
+R17		15k 5%		1
+R21,R22		22k 5%		2
+R15		33k 5%		1
+R19,R20		68k 5%		2
+R12,R13		100k 1%		2
+R3,R4,R5,R6,R19	100k 5%		5
+R23		470k 5%		1
+C5,C6,C7,C8,C9	100n		5
+C3**,C4**	10µF/35 V tantalum	2**
+C1,C2		22µF/35 V polarized	2
+A1		1k trimmer	1
+A2		47k trimmer	1
+A3		100k trimmer	1
+P1,P2,P3	100K (Lin or Log**)	3
+Jk1,Jk2,Jk3,Jk4,Jk5,Jk6		jack socket	6
+LD1		green LED	1
+
+
+Depending on the VCA type (AC or DC), some components are either or not required (check the *,**).
+You may also use 2N3904 for Q1, Q2 and Q3. In such a case, the pinout of the transistors is reversed, be sure to rotate them by 180° (flat side of Q1 and Q2 facing the power connector J3 and flat side of Q3 facing U2) .
+The LED based input level indicator circuit may be omitted if current consumption is an issue.
+Don't forget to solder the three straps 
+
+
+
+***Setting and trimming***
+Trimming is quite easy if you use matched NPNs for Q1 and Q2, and 1% tolerance resistors for R6 to R11. You will need a dual trace scope, a DVM and a sinewave generator. Using 10 turn trimmers is a little bit more expensive than using 1 turn but makes it easier to adjust with high accuracy.
+Set A1, A2 & A3 to mid-range.
+Connect the sinewave generator (freq. 1KHz, 4.0Vpp) to input 1, P1 turned fully clockwise (maximum signal).
+Connect the sinewave generator to the first input of your scope.
+Turn P2 fully clockwise (maximum gain).
+Connect the output to the second input of the scope.
+Adjust the trimmer A1 in order to have a perfectly symmetrical sine wave at the output (the best way is to superimpose the trace of the sinewave at input and the one at the output). You may have also to play slightly with A2 as well to reduce gain if you have saturation on both the positive and negative crests of the output sinewave.
+Next, turn P2 (GAIN) fully counter-clockwise (no CV). Adjust A2 in order to completely mute the output signal.
+When used, A3 must be adjusted as follows :  after completion of the previous settings, turn P1, P2 and P3 fully counter-clockwise (no signal, no CV) adjust A3 in order to have an output level (pin 7 -U1b) as close as possible to 0V. If necessary, repeat the settings from 2 to 7.
+
+If you find that a unit gain for maximum control voltage is not enough for you may increase the values of R10 and R11 (e.g. setting R10 & R11 to 47K will double the output gain).
+
+Linearity versus overdrive
+With the component values that are used, the VCA is perfectly linear for input signals that do not exceed 10Vpp. Above this level the VCA gets progressively overdriven and starts distorting. I choose not to troubleshoot this since overdriving a VCA can add some byte to its sound ! On some signals (saw, square) there may be some high frequency resonance on very steep edges, this may be eliminated by soldering a small 7pF to 10pF ceramic capacitor in parallel with R11.
+
+***References***
+Actually I have no references for this circuit !  I lost it about 25 years ago...
+Here is an interesting page dedicated to Gilbert cells and balanced modulator schematics. It deserves being checked: http://michaelgellis.tripod.com/gilbert.html

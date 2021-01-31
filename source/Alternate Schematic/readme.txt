@@ -1,0 +1,1 @@
+This was an alternate schematic that I could have chosen instead of the Yusynth version
