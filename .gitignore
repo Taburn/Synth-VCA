@@ -1,0 +1,9 @@
+
+*.PcbDocPreview
+*.SchDocPreview
+*.log
+*.PrjPcb.Zip
+*.SchDoc.Zip
+*.PcbDoc.Zip
+*.SchLib.Zip
+*.PcbLib.Zip
